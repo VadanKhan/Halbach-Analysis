@@ -1,0 +1,22 @@
+
+function [Flift,Flift2,Fdrag,Fdrag2] = forces_a(v,s,d,lambda,M,Br,h,y1,n)
+k = 2*pi/lambda;
+l = lambda*n; %length
+mu = 4*pi * 10e-7; %permeability of air (H/m)
+sigma = 2.459*10e7; %conductivity (W/m K)
+omega = k*v;
+a = sqrt(k^2 + sqrt(k^4 + mu^2*sigma^2*omega^2)/2);
+
+% Flift = s*l*(Br^2)*(M^2)*(sin(pi/M)^2)*((1-exp(-k*d))^2)*(1-exp(-2*a*h))*exp(-2*k*y1) / (mu*pi^2);
+v1 = mu*sigma^2*s*l*(Br^2)*(M^2)*(sin(pi/M)^2)*((1-exp(-k*d))^2)*(1-exp(-2*a*h))*exp(-2*k*y1)/(pi^2*k^2);
+v2 = sqrt(1+(mu^2*sigma^2*v^2/k^2))+1;
+v3 = v^2/(v2^1.5*(v2^0.5+sqrt(2)));
+Flift = v1*v3;
+v1 = (sqrt(2)*sigma*s*l*(Br^2)*(M^2)) * (sin(pi/M)^2) * ((1-exp(-k*d))^2) * (1-exp(-2*a*h)) * (1+exp(-2*a*h)) * exp(-2*k*y1)/((pi^2)*k);
+v3 = v / (v2 * (v2^0.5 + sqrt(2)));
+Fdrag = v1*v3;
+Flift2 = s*l*(Br^2)*(M^2)*(sin(pi/M)^2)*((1-exp(-k*d))^2)*(1-exp(-2*a*h))*exp(-2*k*y1)/(pi^2*mu);
+Fdrag2 = (sqrt(2)*s*l*(Br^2)*(M^2)*(k^0.5)) * (sin(pi/M)^2) * ((1-exp(-k*d))^2) * (1-exp(-2*a*h)) * (1+exp(-2*a*h)) * exp(-2*k*y1)/((pi^2)*mu^1.5*sigma^0.5 * v^0.5);
+end
+% 
+% *exp(-2*k*y1))
