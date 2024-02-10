@@ -1,17 +1,17 @@
 # Halbach-Analysis
-Projects to analyse how parameters affect the "lift effect" of halbach arrays in Magnetic Levitation contexts.
 
-These codes were written in the context of the Hyperloop Manchester project
-https://hyperloop-manchester.com/
-https://www.linkedin.com/company/hyperloop-manchester/mycompany/
-Here we are investigating what effects changing the dimensions of our Halbach array will have on our pod.
+Projects to analyse how parameters affect the "lift effect" of Halbach arrays in Magnetic Levitation contexts.
 
+These codes were written in the context of the Hyperloop Manchester project. Here we are investigating what effects changing the dimensions of our Halbach array will have on our pod.
 
-# Halbach Array Analysis
+- https://hyperloop-manchester.com/
+- https://www.linkedin.com/company/hyperloop-manchester/mycompany/
+
+## Halbach Array Analysis
 
 This repository contains Python scripts for analyzing the effects of various parameters of Halbach arrays on their properties. The scripts calculate the lift force and drag force for a given set of parameters.
 
-## Dependencies
+### Dependencies
 
 The scripts depend on the following Python libraries:
 
@@ -31,13 +31,19 @@ Or if you are using Poetry for managing virtual environments, you can add these 
 poetry add numpy matplotlib scipy
 ```
 
-## Scripts
+### Scripts
 
-The repository includes the following scripts:
+#### Halbach_Analysis (`Halbach_Analysis.py`)
 
-- `Hu_liftforce.py`: This script calculates the lift force of a Halbach array given a set of parameters. The parameters include the wavelength of one periodic unit of the Halbach array, the width and length of the Halbach, the height of the Halbach, the distance from the conductor plate to the bottom of the Halbach, the number of magnets per wavelength, the height of the conductor, the permeability, the conductivity, and the remnant magnetization.
+This script is a general large script that can plot the behaviour of the lift and drag of the system against certain parameters.
 
-- `Hu_dragforce.py`: This script calculates the drag force of a Halbach array given a set of parameters. The parameters are the same as those for the lift force calculation.
+#### Optimum Lift Density Analysis (`optimum_lift_density.py`)
+
+The `optimum_lift_density.py` script is designed to analyze and visualize the relationship between the thickness of a Halbach array and its lift effect, mass, and lift density.
+
+#### Plotting Functions (`plotting_functions.py`)
+
+The `plotting_functions.py` module provides two functions for creating plots: `create_plot` and `array_plot`. The `create_plot` function takes a function and a range of x values as input, and plots the function over that range. The `array_plot` function plots a range of x values and y values. It has optional parameters for setting the y-axis limits, the graph title, the x and y axis labels, and the color of the plot. It can also plot and label the maximum of the curve if desired.
 
 ## Citations
 
