@@ -26,7 +26,7 @@ def main():
     x_min, x_max = 0, 0.1
     halbach_wavelength = 2*np.pi / 0.04
     mass_per_unit_length = 80
-    const_mass = 150
+    const_mass = 120
     lift_constant = 1
 
     # create thickness set
@@ -35,17 +35,14 @@ def main():
 
     # generate results
     lift_effects = lift_against_halbach_thickness(thicknesses, halbach_wavelength)
-    masses = mass_against_halbach_thickness(thicknesses, halbach_wavelength)
+    masses = mass_against_halbach_thickness(thicknesses, mass_per_unit_length, const_mass)
     lift_density = (lift_constant) * lift_effects / masses
 
     # plot results
-    create_plot(lift_against_halbach_thickness, x_min, x_max, resolution, halbach_wavelength,
-                graph_title='Lift against Thickness', x_title='Thickness', y_title='Lift Effect',
-                colour_input='Green')
-    create_plot(mass_against_halbach_thickness, x_min, x_max, resolution, mass_per_unit_length, const_mass,
-                y_min=100, y_max=200,
-                graph_title='Mass against Thickness', x_title='Thickness', y_title='Mass',
-                colour_input='Red')
+    array_plot(thicknesses, lift_effects, y_min=None, y_max=None, graph_title='Lift against Thickness', x_title='Thickness',
+               y_title='Lift Effect', colour_input='Green')
+    array_plot(thicknesses, masses, y_min=100, y_max=150, graph_title='Mass against Thickness', x_title='Thickness',
+               y_title='Mass', colour_input='Red')
     return 0
 
 
