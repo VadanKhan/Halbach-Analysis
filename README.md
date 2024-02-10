@@ -1,7 +1,9 @@
 # Halbach-Analysis
 Projects to analyse how parameters affect the "lift effect" of halbach arrays in Magnetic Levitation contexts.
 
-These codes were written in the context of the Hyperloop Manchester project https://www.linkedin.com/company/hyperloop-manchester/mycompany/
+These codes were written in the context of the Hyperloop Manchester project
+https://hyperloop-manchester.com/
+https://www.linkedin.com/company/hyperloop-manchester/mycompany/
 Here we are investigating what effects changing the dimensions of our Halbach array will have on our pod.
 
 

@@ -46,13 +46,24 @@ def create_plot(function_input, x_min, x_max, resolution, *extra_inputs, y_min=N
 
 
 def array_plot(x_values, y_values, y_min=None, y_max=None, graph_title='title', x_title='x',
-               y_title='y', colour_input='navy'):
+               y_title='y', colour_input='navy', show_maximum=False):
     """
-    Will plot a range of x values and y values.
+    This function plots a range of x values and y values. It has optional features to set the y
+        axis limits. Additionally can plot the maximum of the curve.
 
-    Returns
-    -------
-    0
+    Parameters:
+    x_values (numpy.ndarray): The array of x values.
+    y_values (numpy.ndarray): The array of y values.
+    y_min (float, optional): The minimum limit for the y-axis. If not provided, the limit is set automatically.
+    y_max (float, optional): The maximum limit for the y-axis. If not provided, the limit is set automatically.
+    graph_title (str, optional): The title of the graph. Default is 'title'.
+    x_title (str, optional): The label for the x-axis. Default is 'x'.
+    y_title (str, optional): The label for the y-axis. Default is 'y'.
+    colour_input (str, optional): The color of the plot. Default is 'navy'.
+    show_maximum (bool, optional): If True, the maximum point is plotted and labeled. Default is False.
+
+    Returns:
+    int: 0 if the plot is successful, 1 otherwise.
     """
 
     fig = plt.figure()
@@ -70,6 +81,12 @@ def array_plot(x_values, y_values, y_min=None, y_max=None, graph_title='title', 
 
     try:
         axes.plot(x_values, y_values, color=colour_input, label='Trend Prediction')
+        if show_maximum:
+            max_y_index = np.argmax(y_values)
+            max_y = y_values[max_y_index]
+            max_x = x_values[max_y_index]
+            axes.plot(max_x, max_y, 'ro', label=f'Maximum ({max_x}, {max_y})')
+        plt.legend()
     except Exception as e:
         print(f"An error occurred: {e}")
         return 1
