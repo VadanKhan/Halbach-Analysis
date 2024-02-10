@@ -19,15 +19,15 @@ The scripts depend on the following Python libraries:
 
 You can install these dependencies using pip:
 
-\```bash
+```bash
 pip install numpy matplotlib scipy
-\```
+```
 
 Or if you are using Poetry for managing virtual environments, you can add these dependencies to your `pyproject.toml` file and install them using Poetry:
 
-\```bash
+```bash
 poetry add numpy matplotlib scipy
-\```
+```
 
 ## Scripts
 
