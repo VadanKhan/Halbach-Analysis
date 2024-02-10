@@ -85,7 +85,7 @@ def array_plot(x_values, y_values, y_min=None, y_max=None, graph_title='title', 
             max_y_index = np.argmax(y_values)
             max_y = y_values[max_y_index]
             max_x = x_values[max_y_index]
-            axes.plot(max_x, max_y, 'ro', label=f'Maximum ({max_x}, {max_y})')
+            axes.plot(max_x, max_y, 'ro', label=f'Maximum ({max_x:.5g}, {max_y:.5g})')
         plt.legend()
     except Exception as e:
         print(f"An error occurred: {e}")

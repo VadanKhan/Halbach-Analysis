@@ -26,11 +26,11 @@ def main():
     x_min, x_max = 0, 0.1
     halbach_wavelength = 2*np.pi / 0.04
     mass_per_unit_length = 80
-    const_mass = 50
+    const_mass = 0.08 * 7600  # density of NeFeB * CSA of skis
     lift_constant = 1
 
     # create thickness set
-    resolution = 100
+    resolution = 200
     thicknesses = np.linspace(x_min, x_max, resolution)
 
     # generate results
