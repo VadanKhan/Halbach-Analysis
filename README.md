@@ -36,3 +36,9 @@ The repository includes the following scripts:
 - `Hu_liftforce.py`: This script calculates the lift force of a Halbach array given a set of parameters. The parameters include the wavelength of one periodic unit of the Halbach array, the width and length of the Halbach, the height of the Halbach, the distance from the conductor plate to the bottom of the Halbach, the number of magnets per wavelength, the height of the conductor, the permeability, the conductivity, and the remnant magnetization.
 
 - `Hu_dragforce.py`: This script calculates the drag force of a Halbach array given a set of parameters. The parameters are the same as those for the lift force calculation.
+
+## Citations
+
+Chaidez, Eric, Shankar P. Bhattacharyya, and Adonios N. Karpetis. “Levitation Methods for Use in the Hyperloop High-Speed Transportation System.” Energies 12, no. 21: 4190
+
+Hu, Yongpan, Zhiqiang Long, Jiewei Zeng, and Zhiqiang Wang. “Analytical Optimization of Electrodynamic Suspension for Ultrahigh-Speed Ground Transportation.” IEEE Transactions on Magnetics, vol. 57, no. 8, August 2021, 8000511
