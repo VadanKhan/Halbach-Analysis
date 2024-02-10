@@ -26,7 +26,7 @@ def main():
     x_min, x_max = 0, 0.1
     halbach_wavelength = 2*np.pi / 0.04
     mass_per_unit_length = 80
-    const_mass = 120
+    const_mass = 50
     lift_constant = 1
 
     # create thickness set
@@ -40,9 +40,11 @@ def main():
 
     # plot results
     array_plot(thicknesses, lift_effects, y_min=None, y_max=None, graph_title='Lift against Thickness', x_title='Thickness',
-               y_title='Lift Effect', colour_input='Green', show_maximum=True)
-    array_plot(thicknesses, masses, y_min=100, y_max=150, graph_title='Mass against Thickness', x_title='Thickness',
+               y_title='Lift Effect', colour_input='Green')
+    array_plot(thicknesses, masses, y_min=None, y_max=None, graph_title='Mass against Thickness', x_title='Thickness',
                y_title='Mass', colour_input='Red')
+    array_plot(thicknesses, lift_density, y_min=None, y_max=None, graph_title='Lift Density', x_title='Thickness',
+               y_title='Lift Density', colour_input=None, show_maximum=True)
     return 0
 
 
